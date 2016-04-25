@@ -18,15 +18,34 @@ $ npm install --save random-millisecond
 
 ```js
 var randomMillisecond = require('random-millisecond');
-
+  
 // API
-// - randomMillisecond();
-
-randomMillisecond();
-// => 729
+// - randomMillisecond([options]);
+  
+// options
+// - min
+// - max
 ```
 
-By default, returns a millisecond from `0` to `999`. Idea is for generating a clock time.
+By default, returns a minute from `0` to `999`. Idea is for generating a clock time.
+  
+```js
+randomMillisecond();
+// => 379
+```
+
+Optionally specify min, max, or both to limit the range.
+
+```js
+randomMillisecond({ min: 100 });
+// => 188
+
+randomMillisecond({ max: 400 });
+// => 235
+
+randomMillisecond({ min: 100, max: 400 });
+// => 324
+```
 
 ## Related
 
